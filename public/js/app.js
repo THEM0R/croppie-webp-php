@@ -138,7 +138,7 @@ $(function () {
 
       $.ajax({
         type: 'POST',
-        url: '/upload/image/url',
+        url: '/upload_url.php',
         data: {
           url: url
         },
@@ -153,15 +153,15 @@ $(function () {
               console.log('jQuery bind complete');
             });
 
-            modal_selector.addClass('modal-600');
+            modal_selector
+              .removeClass('modal.sm')
+              .addClass('modal-lg');
 
             modal_sm.hide();
 
-            modal_ajax.show();
-
             modal_croppie.show();
 
-          } else {
+            modal_lg.show();
 
           }
         }

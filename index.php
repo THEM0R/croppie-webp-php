@@ -1,10 +1,6 @@
 <?php
-
 require 'init.php';
-
-
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -14,7 +10,7 @@ require 'init.php';
 
 
   <!-- bootstrap -->
-  <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="public/bootstrap/bootstrap.min.css">
   <!-- bootstrap -->
 
   <script
@@ -22,13 +18,11 @@ require 'init.php';
     integrity="sha256-wS9gmOZBqsqWxgIVgA8Y9WcQOa7PgSIX+rPA0VL2rbQ="
     crossorigin="anonymous"></script>
 
-  <link rel="stylesheet" href="css/style.css">
-  <script src="js/app.min.js"></script>
+  <link rel="stylesheet" href="public/css/style.css">
+  <script src="public/js/app.min.js"></script>
 
 </head>
 <body style="min-height: 1000px">
-
-
 
 <!-- wrapper -->
 <div class="wrapper">
