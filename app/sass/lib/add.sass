@@ -1,3 +1,4 @@
+$color-1: #dfdfdf
 
 .overlay-white
   display: none
@@ -38,167 +39,151 @@ body
   padding-bottom: 50px
   padding-top: 50px
 
-#form
+#no-photo
+  background-image: url(../i/no-photo.png)
+  background-color: #ffffff
+  background-repeat: no-repeat
+  background-position: center
   width: 100%
-  display: inline-table
+  height: 100%
+  display: block
 
-  .content
-    .link
-      position: absolute
-      top: 15px
-      right: 20px
-      width: 30px
-      height: 30px
-      cursor: pointer
 
-      background-color: red
-      border-radius: 50%
+.link
+  position: absolute
+  top: 15px
+  right: 20px
+  width: 30px
+  height: 30px
+  cursor: pointer
+  background-color: $color-1
+  border-radius: 50%
 
-      > i
-        font-size: 32px
-        color: #696969
-        font-size: 32px
-        color: #696969
+.overlay
+  display: none
+  opacity: 0
+  z-index: 2
 
-      &:hover > i
-        color: #ec174f
+  #delete
+    position: absolute
+    top: 15px
+    left: 15px
+    width: 20px
+    height: 20px
+    cursor: pointer
+    z-index: 3
 
-      .favorite
-        position: absolute
-        top: 20px
-        left: 20px
-        width: 20px
-        height: 20px
+    &:before
+      color: white
 
-      a > img
-        width: 280px
 
-    .overlay
-      display: none
-      opacity: 0
-      z-index: 2
+.window
+  position: relative
+  border: 2px solid $color-1
 
-      #delete
-        position: absolute
-        top: 15px
-        left: 15px
-        width: 20px
-        height: 20px
-        cursor: pointer
-        z-index: 3
+.poster
+  width: 280px
+  height: 392px
+  margin-bottom: 15px
 
-        &:before
-          color: white
+  &:hover.overlay
+    opacity: 1
 
-    .poster
-      position: relative
-      width: 280px
-      height: 392px
-      display: block
-      border: 2px solid #EC174F
-      margin-bottom: 15px
+  .preview
+    display: none
+    width: 280px
+    height: 392px
+    -webkit-background-size: 280px 280px
+    background-size: 280px
+    background-repeat: no-repeat
+    background-position: center
+    position: absolute
+    top: 0
+    left: 0
+    z-index: 1
+    -webkit-border-radius: 3px
+    border-radius: 3px
 
-      &:hover.overlay
-        opacity: 1
+.poster-big
+  width: 280px
+  height: 173px
+  overflow: hidden
 
-      .preview
-        display: none
-        width: 280px
-        height: 392px
-        -webkit-background-size: 280px 280px
-        background-size: 280px
-        background-repeat: no-repeat
-        background-position: center
-        position: absolute
-        top: 0
-        left: 0
-        z-index: 1
-        -webkit-border-radius: 3px
-        border-radius: 3px
+  .preview
+    display: none
+    width: 280px
+    height: 173px
+    -webkit-background-size: 280px 280px
+    background-size: 280px
+    background-repeat: no-repeat
+    background-position: center
+    position: absolute
+    top: 0
+    left: 0
+    z-index: 1
+    -webkit-border-radius: 3px
+    border-radius: 3px
 
-    .poster-big
-      position: relative
-      width: 280px
-      height: 173px
-      display: block
-      border: 2px solid #EC174F
-      overflow: hidden
+  #delete
+    position: absolute
+    top: 15px
+    left: 15px
+    width: 20px
+    height: 20px
+    cursor: pointer
 
-      .preview
-        display: none
-        width: 280px
-        height: 173px
-        -webkit-background-size: 280px 280px
-        background-size: 280px
-        background-repeat: no-repeat
-        background-position: center
-        position: absolute
-        top: 0
-        left: 0
-        z-index: 1
-        -webkit-border-radius: 3px
-        border-radius: 3px
+    &:before
+      color: white
 
-      #delete
-        position: absolute
-        top: 15px
-        left: 15px
-        width: 20px
-        height: 20px
-        cursor: pointer
+  &:hover.overlay
+    opacity: 1
 
-        &:before
-          color: white
+.screens
+  margin-top: 20px
 
-      &:hover.overlay
-        opacity: 1
+  >
+  #add
+    width: 100%
+    text-align: center
 
-    .screens
-      margin-top: 20px
+    &:hover
+      background-color: #EC174F
+      color: #fff
 
-      >
-      #add
-        width: 100%
-        text-align: center
+    #screens
+      width: 100%
+      margin-top: 10px
+      display: inline-block
 
-        &:hover
-          background-color: #EC174F
-          color: #fff
+      > .screen
+        position: relative
+        width: 135px
+        height: 50px
+        margin-right: 10px
+        margin-bottom: 10px
 
-        #screens
-          width: 100%
-          margin-top: 10px
-          display: inline-block
+        &:nth-child(2n)
+          margin-right: 0
 
-          > .screen
-            position: relative
-            width: 135px
-            height: 50px
-            margin-right: 10px
-            margin-bottom: 10px
+        &:hover .overlay
+          opacity: 1
 
-            &:nth-child(2n)
-              margin-right: 0
+        >
+        .preview
+          position: absolute
+          top: 0
+          left: 0
+          display: block
+          background-repeat: no-repeat
+          background-position: center
+          -webkit-background-size: 135px auto
+          background-size: 135px auto
+          width: 135px
+          height: 50px
 
-            &:hover .overlay
-              opacity: 1
-
-            >
-            .preview
-              position: absolute
-              top: 0
-              left: 0
-              display: block
-              background-repeat: no-repeat
-              background-position: center
-              -webkit-background-size: 135px auto
-              background-size: 135px auto
-              width: 135px
-              height: 50px
-
-              .overlay
-                display: block
-                opacity: 0
+          .overlay
+            display: block
+            opacity: 0
 
 #p-modal, #p-trash
   float: left
@@ -211,7 +196,6 @@ body
   border-radius: 3px
   text-align: center
   cursor: pointer
-
 
 
 /* modal */

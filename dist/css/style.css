@@ -364,52 +364,34 @@ body {
   padding-top: 50px;
 }
 
-#form {
+#no-photo {
+  background-image: url(../i/no-photo.png);
+  background-color: #ffffff;
+  background-repeat: no-repeat;
+  background-position: center;
   width: 100%;
-  display: inline-table;
+  height: 100%;
+  display: block;
 }
 
-#form .content .link {
+.link {
   position: absolute;
   top: 15px;
   right: 20px;
   width: 30px;
   height: 30px;
   cursor: pointer;
-  background-color: red;
+  background-color: #dfdfdf;
   border-radius: 50%;
 }
 
-#form .content .link > i {
-  font-size: 32px;
-  color: #696969;
-  font-size: 32px;
-  color: #696969;
-}
-
-#form .content .link:hover > i {
-  color: #ec174f;
-}
-
-#form .content .link .favorite {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  width: 20px;
-  height: 20px;
-}
-
-#form .content .link a > img {
-  width: 280px;
-}
-
-#form .content .overlay {
+.overlay {
   display: none;
   opacity: 0;
   z-index: 2;
 }
 
-#form .content .overlay #delete {
+.overlay #delete {
   position: absolute;
   top: 15px;
   left: 15px;
@@ -419,24 +401,26 @@ body {
   z-index: 3;
 }
 
-#form .content .overlay #delete:before {
+.overlay #delete:before {
   color: white;
 }
 
-#form .content .poster {
+.window {
   position: relative;
+  border: 2px solid #dfdfdf;
+}
+
+.poster {
   width: 280px;
   height: 392px;
-  display: block;
-  border: 2px solid #EC174F;
   margin-bottom: 15px;
 }
 
-#form .content .poster:hover.overlay {
+.poster:hover.overlay {
   opacity: 1;
 }
 
-#form .content .poster .preview {
+.poster .preview {
   display: none;
   width: 280px;
   height: 392px;
@@ -450,16 +434,13 @@ body {
   border-radius: 3px;
 }
 
-#form .content .poster-big {
-  position: relative;
+.poster-big {
   width: 280px;
   height: 173px;
-  display: block;
-  border: 2px solid #EC174F;
   overflow: hidden;
 }
 
-#form .content .poster-big .preview {
+.poster-big .preview {
   display: none;
   width: 280px;
   height: 173px;
@@ -473,7 +454,7 @@ body {
   border-radius: 3px;
 }
 
-#form .content .poster-big #delete {
+.poster-big #delete {
   position: absolute;
   top: 15px;
   left: 15px;
@@ -482,35 +463,35 @@ body {
   cursor: pointer;
 }
 
-#form .content .poster-big #delete:before {
+.poster-big #delete:before {
   color: white;
 }
 
-#form .content .poster-big:hover.overlay {
+.poster-big:hover.overlay {
   opacity: 1;
 }
 
-#form .content .screens {
+.screens {
   margin-top: 20px;
 }
 
-#form .content .screens #add {
+.screens #add {
   width: 100%;
   text-align: center;
 }
 
-#form .content .screens #add:hover {
+.screens #add:hover {
   background-color: #EC174F;
   color: #fff;
 }
 
-#form .content .screens #add #screens {
+.screens #add #screens {
   width: 100%;
   margin-top: 10px;
   display: inline-block;
 }
 
-#form .content .screens #add #screens > .screen {
+.screens #add #screens > .screen {
   position: relative;
   width: 135px;
   height: 50px;
@@ -518,15 +499,15 @@ body {
   margin-bottom: 10px;
 }
 
-#form .content .screens #add #screens > .screen:nth-child(2n) {
+.screens #add #screens > .screen:nth-child(2n) {
   margin-right: 0;
 }
 
-#form .content .screens #add #screens > .screen:hover .overlay {
+.screens #add #screens > .screen:hover .overlay {
   opacity: 1;
 }
 
-#form .content .screens #add #screens > .screen .preview {
+.screens #add #screens > .screen .preview {
   position: absolute;
   top: 0;
   left: 0;
@@ -538,7 +519,7 @@ body {
   height: 50px;
 }
 
-#form .content .screens #add #screens > .screen .preview .overlay {
+.screens #add #screens > .screen .preview .overlay {
   display: block;
   opacity: 0;
 }
