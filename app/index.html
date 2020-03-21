@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <title>Croppie + Webp + Php</title>
-  <link rel="stylesheet" href="css/style.css">
-<!--  <style>-->
-<!--    .modal{-->
-<!--      display: none;-->
-<!--    }-->
-<!--  </style>-->
 
+
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+  <script src="bootstrap/bootstrap.min.js"></script>
+  <!-- bootstrap -->
+
+  <link rel="stylesheet" href="css/style.css">
   <script src="js/app.min.js"></script>
 
 </head>
@@ -20,12 +21,15 @@
 <!-- wrapper -->
 <div class="wrapper">
 
-<div class="container container-box">
+<div class="container">
   <!-- form -->
-  <form action="/admin/kinopoisk/film/add" method="POST" id="form">
+  <form id="form">
+
+    <center>
+
 
     <!-- left -->
-    <div class="left">
+    <div class="content">
 
       <!-- poster -->
 <!--      <?php if(isset($data['poster']) && $data['poster'] != ''):?>-->
@@ -118,10 +122,7 @@
 
     </div>
     <!-- left end -->
-
-    <div class="submit">
-      <input type="submit" name="addfilm" class="btn" value="Добавить">
-    </div>
+    </center>
 
   </form>
   <!-- form end -->
@@ -248,6 +249,14 @@
         /*
         jQuery
          */
+
+        /* modal */
+        $('.modal').css('display','none');
+
+        $('.modal p.close').click(function(){
+            $.modal.close();
+        });
+        /* modal */
 
 
 
