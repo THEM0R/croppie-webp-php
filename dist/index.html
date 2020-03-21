@@ -27,11 +27,9 @@
 
   <div class="container">
     <!-- form -->
-    <form id="form">
+    <form id="form" action="upload.php" method="post">
 
       <center>
-
-
         <!-- left -->
         <div class="content">
           <div class="poster window">
@@ -63,7 +61,18 @@
 
         </div>
         <!-- left end -->
+        <? if (isset($_SESSION['error']) and $_SESSION['error'] != ''): ?>
+          <div class="alert alert-danger" role="alert">
+            <h4 class="alert-heading">Well done!</h4>
+            <p><? echo $_SESSION['error']; unset($_SESSION['error']); ?></p>
+          </div>
+        <? endif; ?>
+
+
+        <input type="submit" name="upload" value="upload" class="btn btn-success w-50">
+
       </center>
+
 
     </form>
     <!-- form end -->

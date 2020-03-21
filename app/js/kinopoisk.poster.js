@@ -28,6 +28,8 @@ $(function () {
 
   var view_poster_link = $('.poster .link');
 
+  var view_submit = $('input[type=submit]');
+
   // ajax
   var modal_button_croppie_upload = $('#modal-poster .modal-body .croppie-upload');
 
