@@ -2,8 +2,8 @@ $(function () {
   // modal
   var modal_selector = $('#modal-poster .modal-dialog');
 
-  var modal_sm = $('#modal-poster .sm');
-  var modal_lg = $('#modal-poster .lg');
+  var modal_sm = $('#modal-poster form.sm');
+  var modal_lg = $('#modal-poster form.lg');
 
   var modal_preview = $('#modal-poster .preview');
 
@@ -13,9 +13,6 @@ $(function () {
   var modal_croppie = $('#modal-poster .modal-body .croppie');
 
   // view
-  var view_image = $(".poster .image");
-  var view_no_image = $(".poster .no-image");
-
   var view_poster_input = $(".poster input[name=poster]");
 
   var view_kpid = $('[name=kpid]');
@@ -27,6 +24,8 @@ $(function () {
   var view_error = $('.error');
 
   var view_poster_link = $('.poster .link');
+
+  var view_no_photo = $('.poster #no-photo');
 
   // ajax
   var modal_button_croppie_upload = $('#modal-poster .modal-body .croppie-upload');
@@ -50,7 +49,6 @@ $(function () {
   });
   modal_preview.hide().html('');
   modal_lg.hide();
-  view_image.hide();
 
   view_error.hide();
 
@@ -73,24 +71,23 @@ $(function () {
 
       view_poster_input.attr('value', resp).attr('data-type', 'base64');
 
-      view_image.show();
-      view_no_image.hide();
+      view_preview.show();
+      view_poster_link.hide();
+      view_no_photo.hide();
 
       modal_button_file.val('');
 
       modal_croppie.children('div').children('img').attr('src', '');
 
-      modal_selector
-        .removeClass('modal-lg')
-        .addClass('modal-sm');
+      modal_selector.removeClass('modal-600');
 
       modal_sm.show();
-      modal_lg.hide();
 
-      modal_preview.html('');
+      modal_preview.hide().html('');
 
+      modal_ajax.hide();
       modal_croppie.hide();
-      modal.modal('hide');
+      //$.modal.close();
 
     });
 
@@ -203,7 +200,7 @@ $(function () {
   // delete
   $('.poster .overlay #delete').click(function () {
     view_poster_link.show();
-    view_no_image.show();
+    view_no_photo.show();
 
     view_preview.hide();
     view_overlay.hide();

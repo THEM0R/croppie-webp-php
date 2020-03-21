@@ -34,96 +34,32 @@
 
         <!-- left -->
         <div class="content">
-
-          <!-- poster -->
-          <!--      <?php if(isset($data['poster']) && $data['poster'] != ''):?>-->
-          <!--      <div class="poster">-->
-          <!--        <div id="no-photo" style="display: none"></div>-->
-
-          <!--        <div class="link" style="display: none">-->
-          <!--          <i class="icon-plus-circled"></i>-->
-          <!--        </div>-->
-
-          <!--        <div class="preview" style="display: block;background-image: url('<?=$data['poster'];?>')"></div>-->
-
-          <!--        <div class="overlay" style="display: block;">-->
-          <!--          <div id="delete" class="icon-cancel-2"></div>-->
-          <!--        </div>-->
-
-          <!--        <input type="hidden" name="poster" value="<?=$data['poster'];?>">-->
-          <!--      </div>-->
-          <!--      <?php else:?>-->
           <div class="poster window">
 
-            <div id="no-photo"></div>
+            <div class="image">
 
-            <div class="link">
-              <i class="icon-plus-circled"></i>
+              <div class="preview"></div>
+
+              <div class="overlay">
+                <div id="delete" class="" style="color: white">close</div>
+              </div>
+
+              <input type="hidden" name="poster" value="">
             </div>
 
-            <div class="preview"></div>
+            <div class="no-image">
 
-            <div class="overlay">
-              <div id="delete" class="icon-cancel-2"></div>
+              <div id="no-image"></div>
+
+              <div class="link">
+                <i class="icon-plus-circled"></i>
+              </div>
+
             </div>
 
-            <input type="hidden" name="poster" value="">
           </div>
-          <!--      <?php endif;?>-->
-
 
           <!-- poster end -->
-
-          <!-- poster big -->
-          <!--      <?php if(isset($data['poster_big']) && $data['poster_big'] != ''):?>-->
-          <!--      <div class="poster-big">-->
-          <!--        <div id="no-photo" style="display: none"></div>-->
-          <!--        <div class="link" style="display: none">-->
-          <!--          <i class="icon-plus-circled"></i>-->
-          <!--        </div>-->
-          <!--        <div class="preview" style="display: block;background-image: url('<?=$data['poster_big'];?>')"></div>-->
-          <!--        <div class="overlay" style="display: block;">-->
-          <!--          <div id="delete" class="icon-cancel-2"></div>-->
-          <!--        </div>-->
-          <!--        <input type="hidden" name="poster_big" value="<?=$data['poster_big'];?>">-->
-          <!--      </div>-->
-          <!--      <?php else:?>-->
-          <div class="poster-big window">
-            <div id="no-photo" class="icon-picture"></div>
-            <div class="link">
-              <i class="icon-plus-circled"></i>
-            </div>
-            <div class="preview"></div>
-            <div class="overlay">
-              <div id="delete" class="icon-cancel-2"></div>
-            </div>
-            <input type="hidden" name="poster_big" value="">
-          </div>
-          <!--      <?php endif;?>-->
-          <!-- poster big end -->
-
-          <!-- screens -->
-          <div class="screens">
-            <div id="add" style="" class="btn">Добавить скриншот</div>
-
-            <!-- screens -->
-            <div id="screens">
-              <!--          <?php if(isset($data['screen']) && $data['screen'] != []):?>-->
-              <!--          <?php foreach ($data['screen'] as $screen):?>-->
-              <!--          <div class="screen">-->
-              <!--            <input name="screen[]" type="hidden" value="<?=$screen;?>">-->
-              <!--            <div class="preview" style="background-image: url('<?=$screen;?>');"></div>-->
-              <!--            <div class="overlay">-->
-              <!--              <div id="delete" class="icon-cancel-2"></div>-->
-              <!--            </div>-->
-              <!--          </div>-->
-              <!--          <?php endforeach;?>-->
-              <!--          <?php endif;?>-->
-            </div>
-            <!-- screens end -->
-
-          </div>
-          <!-- screens end -->
 
         </div>
         <!-- left end -->
@@ -140,7 +76,7 @@
 
 <!-- croppie -->
 
-<div id="kp-poster" class="modal fade" tabindex="-1" role="dialog">
+<div id="modal-poster" class="modal fade" tabindex="-1" role="dialog">
   <div class="modal-dialog modal-sm" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -150,42 +86,37 @@
         </button>
       </div>
       <div class="modal-body">
-        <form class="form">
+        <div class="sm">
 
-          <div class="sm form-group preview">
+          <div class="form-group preview">
           </div>
 
-          <div class="sm form-group text-center">
-            <button id="poster_pars" type="button" class="btn btn-warning w-100">Парсить</button>
-
+          <div class="form-group text-center">
+            <button type="button" class="btn-parsing btn btn-warning w-100">Парсить</button>
           </div>
 
-          <div class="sm form-group text-center">
-            <input type="file" id="kinopoisk-upload" class="d-none">
-            <label for="kinopoisk-upload" class="btn btn-primary w-100">Выбрать</label>
+          <div class="form-group text-center">
+            <input type="file" id="btn-upload-file" class="d-none">
+            <label for="btn-upload-file" class="btn btn-primary w-100">Выбрать</label>
           </div>
 
-          <div class="sm form-group">
-            <input class="form-control" id="kinopoisk-upload-url" type="text" name="url"
+          <div class="form-group">
+            <input class="form-control btn-upload-url" type="text" name="url"
                    placeholder="http://site.com/image.jpg">
           </div>
 
-          <div class="sm form-group error"></div>
+          <div class="form-group error"></div>
 
-          <div class="form-group" id="kinopoisk-upload-croppie"></div>
+        </div>
+        <div class="lg">
+          <div class="form-group croppie"></div>
 
-          <div class="form-group text-center ajax two">
-            <button id="ajax" class="btn btn-success w-25 yes">Загрузить</button>
-            <button id="no" class="btn btn-danger w-25 no">Отменить</button>
+          <div class="form-group text-center">
+            <button class="croppie-upload btn btn-success w-25 yes">Загрузить</button>
+            <button type="button" class="modal-close btn btn-danger w-25 no" data-dismiss="modal">Отменить</button>
           </div>
-
-        </form>
+        </div>
       </div>
-
-      <!--      <div class="modal-footer">-->
-      <!--        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
-      <!--        <button type="button" class="btn btn-primary">Save changes</button>-->
-      <!--      </div>-->
 
     </div>
   </div>
@@ -197,10 +128,6 @@
     /*
     jQuery
      */
-
-    /* modal */
-    $('.modal').css('display', 'none');
-    /* modal */
 
 
     /*
