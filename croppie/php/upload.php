@@ -36,6 +36,8 @@ if (isset($_POST)) {
       // Создаем изображение на сервере
       if (file_put_contents(CACHE . '/' . $randomName, $decodedData)) {
 
+
+        // https://docs.spatie.be/image/v1/usage/saving-images/#saving-in-a-different-image-format
         Image::load(CACHE . '/' . $randomName)
           ->format(Manipulations::FORMAT_JPG)
           ->optimize()
