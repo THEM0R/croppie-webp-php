@@ -1,0 +1,16 @@
+{
+    "name": "them0r/croppie.loc",
+    "authors": [
+        {
+            "name": "The Mor",
+            "email": "the.mor.ua@gmail.com"
+        }
+    ],
+    "require": {
+        "spatie/image": "^1.7",
+        "symfony/debug": "^4.4"
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^5.0"
+    }
+}
