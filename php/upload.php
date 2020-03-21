@@ -49,21 +49,21 @@ if (isset($_POST)) {
           ->save(CACHE . '/' . $random.'.webp');
 
         $_SESSION['upload'] = 'upload success open upload folder';
-        redirect('/');
+        redirect(DOMEN);
 
       } else {
         $_SESSION['upload'] = 'upload error';
-        redirect('/');
+        redirect(DOMEN);
       }
 
     } else {
       $_SESSION['upload'] = 'poster not found';
-      redirect('/');
+      redirect(DOMEN);
     }
 
   }
 }
 
 $_SESSION['upload'] = 'method is not post';
-redirect('/');
+redirect(DOMEN);
 

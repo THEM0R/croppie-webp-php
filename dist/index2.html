@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Croppie + Webp + Php</title>
+
+
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+  <!-- bootstrap -->
+
+  <script
+    src="https://code.jquery.com/jquery-1.9.1.min.js"
+    integrity="sha256-wS9gmOZBqsqWxgIVgA8Y9WcQOa7PgSIX+rPA0VL2rbQ="
+    crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/app.min.js"></script>
+
+</head>
+<body style="min-height: 1000px">
+
+<h5>Croppie + Webp + Php</h5>
+
+<!-- wrapper -->
+<div class="wrapper">
+
+  <div class="container">
+    <!-- form -->
+    <form id="form">
+
+      <center>
+
+
+        <!-- left -->
+        <div class="content">
+
+          <!-- poster -->
+          <!--      <?php if(isset($data['poster']) && $data['poster'] != ''):?>-->
+          <!--      <div class="poster">-->
+          <!--        <div id="no-photo" style="display: none"></div>-->
+
+          <!--        <div class="link" style="display: none">-->
+          <!--          <i class="icon-plus-circled"></i>-->
+          <!--        </div>-->
+
+          <!--        <div class="preview" style="display: block;background-image: url('<?=$data['poster'];?>')"></div>-->
+
+          <!--        <div class="overlay" style="display: block;">-->
+          <!--          <div id="delete" class="icon-cancel-2"></div>-->
+          <!--        </div>-->
+
+          <!--        <input type="hidden" name="poster" value="<?=$data['poster'];?>">-->
+          <!--      </div>-->
+          <!--      <?php else:?>-->
+          <div class="poster window">
+
+            <div id="no-photo"></div>
+
+            <div class="link">
+              <i class="icon-plus-circled"></i>
+            </div>
+
+            <div class="preview"></div>
+
+            <div class="overlay">
+              <div id="delete" class="icon-cancel-2"></div>
+            </div>
+
+            <input type="hidden" name="poster" value="">
+          </div>
+          <!--      <?php endif;?>-->
+
+
+          <!-- poster end -->
+
+          <!-- poster big -->
+          <!--      <?php if(isset($data['poster_big']) && $data['poster_big'] != ''):?>-->
+          <!--      <div class="poster-big">-->
+          <!--        <div id="no-photo" style="display: none"></div>-->
+          <!--        <div class="link" style="display: none">-->
+          <!--          <i class="icon-plus-circled"></i>-->
+          <!--        </div>-->
+          <!--        <div class="preview" style="display: block;background-image: url('<?=$data['poster_big'];?>')"></div>-->
+          <!--        <div class="overlay" style="display: block;">-->
+          <!--          <div id="delete" class="icon-cancel-2"></div>-->
+          <!--        </div>-->
+          <!--        <input type="hidden" name="poster_big" value="<?=$data['poster_big'];?>">-->
+          <!--      </div>-->
+          <!--      <?php else:?>-->
+          <div class="poster-big window">
+            <div id="no-photo" class="icon-picture"></div>
+            <div class="link">
+              <i class="icon-plus-circled"></i>
+            </div>
+            <div class="preview"></div>
+            <div class="overlay">
+              <div id="delete" class="icon-cancel-2"></div>
+            </div>
+            <input type="hidden" name="poster_big" value="">
+          </div>
+          <!--      <?php endif;?>-->
+          <!-- poster big end -->
+
+          <!-- screens -->
+          <div class="screens">
+            <div id="add" style="" class="btn">Добавить скриншот</div>
+
+            <!-- screens -->
+            <div id="screens">
+              <!--          <?php if(isset($data['screen']) && $data['screen'] != []):?>-->
+              <!--          <?php foreach ($data['screen'] as $screen):?>-->
+              <!--          <div class="screen">-->
+              <!--            <input name="screen[]" type="hidden" value="<?=$screen;?>">-->
+              <!--            <div class="preview" style="background-image: url('<?=$screen;?>');"></div>-->
+              <!--            <div class="overlay">-->
+              <!--              <div id="delete" class="icon-cancel-2"></div>-->
+              <!--            </div>-->
+              <!--          </div>-->
+              <!--          <?php endforeach;?>-->
+              <!--          <?php endif;?>-->
+            </div>
+            <!-- screens end -->
+
+          </div>
+          <!-- screens end -->
+
+        </div>
+        <!-- left end -->
+      </center>
+
+    </form>
+    <!-- form end -->
+  </div>
+
+</div>
+<!-- wrapper end -->
+
+<!-- modal -->
+
+<div id="croppie" class="modal fade" tabindex="-1" role="dialog">
+
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Croppie</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form class="form">
+          <div class="form-group" id="kinopoisk-upload-croppie"></div>
+        </form>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" id="ajax" class="btn btn-success yes" data-dismiss="modal">Загрузить</button>
+        <button type="button" id="no" class="btn btn-danger no">Отменить</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- croppie -->
+
+<div id="kinopoisk-poster" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Загрузка постера</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form class="form">
+
+          <div class="form-group preview">
+          </div>
+
+          <div class="form-group text-center">
+            <button id="poster_pars" type="button" class="btn btn-warning w-100">Парсить</button>
+
+          </div>
+
+          <div class="form-group text-center">
+            <input type="file" id="kinopoisk-upload" class="d-none">
+            <label for="kinopoisk-upload" class="btn btn-primary w-100">Выбрать</label>
+          </div>
+
+          <div class="form-group">
+            <input class="form-control" id="kinopoisk-upload-url" type="text" name="url"
+                   placeholder="http://site.com/image.jpg">
+          </div>
+
+          <div class="form-group error"></div>
+
+          <div class="form-group" id="kinopoisk-upload-croppie"></div>
+
+          <div class="form-group text-center ajax two">
+            <button id="ajax" class="btn btn-success yes">Загрузить</button>
+            <button id="no" class="btn btn-danger no">Отменить</button>
+          </div>
+
+        </form>
+      </div>
+
+      <!--      <div class="modal-footer">-->
+      <!--        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
+      <!--        <button type="button" class="btn btn-primary">Save changes</button>-->
+      <!--      </div>-->
+
+    </div>
+  </div>
+</div>
+
+<div id="kinopoisk-poster2" class="modal">
+
+  <div class="header">
+    <h3 class="title">Загрузка постера</h3>
+    <p class="close" title="Закрить"></p>
+  </div>
+  <div class="content" style="padding-bottom: 30px">
+
+    <div class="form">
+
+      <div class="tab inputs preview">
+      </div>
+
+      <div class="tab inputs">
+        <div id="poster_pars" class="btn" style="text-align: center">Парсить</div>
+      </div>
+
+      <div class="tab inputs">
+        <input type="file" id="kinopoisk-upload" class="i-h">
+        <label for="kinopoisk-upload" class="btn" style="text-align: center">Выбрать</label>
+      </div>
+      <div class="tab inputs">
+        <input id="kinopoisk-upload-url" type="text" name="url" placeholder="http://site.com/image.jpg">
+      </div>
+
+      <div class="tab error"></div>
+
+      <div class="tab" id="kinopoisk-upload-croppie"></div>
+
+      <div class="tab ajax two">
+        <div id="ajax" class="tab btn yes" style="text-align: center">Загрузить</div>
+        <div id="no" class="tab btn no" style="text-align: center">Отменить</div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+<div id="kinopoisk-poster-big" class="modal">
+
+  <div class="header">
+    <h3 class="title">Загрузка постера</h3>
+    <p class="close" title="Закрить"></p>
+  </div>
+  <div class="content" style="padding-bottom: 30px">
+
+    <div class="form">
+
+      <div class="tab inputs preview">
+      </div>
+
+      <div class="tab inputs">
+        <div id="poster-big-pars" class="btn" style="text-align: center">Парсить</div>
+      </div>
+
+      <div class="tab inputs">
+        <input type="file" id="kinopoisk-upload-big" class="i-h">
+        <label for="kinopoisk-upload-big" class="btn" style="text-align: center">Выбрать</label>
+      </div>
+      <div class="tab inputs">
+        <input id="kinopoisk-upload-big-url" type="text" name="url" placeholder="http://site.com/image.jpg">
+      </div>
+
+      <div class="tab error"></div>
+
+      <div class="tab" id="kinopoisk-upload-big-croppie"></div>
+
+      <div class="tab ajax two">
+        <div id="ajax" class="tab btn yes" style="text-align: center">Загрузить</div>
+        <div id="no" class="tab btn no" style="text-align: center">Отменить</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<div id="kinopoisk-screen" class="modal">
+
+  <div class="header">
+    <h3 class="title">Загрузка Скриншота</h3>
+    <p class="close" title="Закрить"></p>
+  </div>
+  <div class="content" style="padding-bottom: 30px">
+
+    <div class="form">
+
+      <div class="tab inputs preview">
+      </div>
+
+      <div class="tab inputs">
+        <div id="screen-pars" class="btn" style="text-align: center">Парсить</div>
+      </div>
+
+      <div class="tab inputs">
+        <input type="file" id="kinopoisk-screen-input" class="i-h">
+        <label for="kinopoisk-screen-input" class="btn" style="text-align: center">Выбрать</label>
+      </div>
+      <div class="tab inputs">
+        <input id="kinopoisk-screen-url" type="text" name="url" placeholder="http://site.com/image.jpg">
+      </div>
+
+      <div class="tab error"></div>
+
+      <div class="tab" id="kinopoisk-screen-croppie"></div>
+
+      <div class="tab ajax two">
+        <div id="ajax" class="tab btn yes" style="text-align: center">Загрузить</div>
+        <div id="no" class="tab btn no" style="text-align: center">Отменить</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- modal end -->
+<script>
+  $(function () {
+    /*
+    jQuery
+     */
+
+    /* modal */
+    $('.modal').css('display', 'none');
+    /* modal */
+
+
+    /*
+    jQuery
+     */
+  });
+</script>
+
+</body>
+</html>

@@ -7,6 +7,9 @@ use Symfony\Component\Debug\Debug;
 
 Debug::enable();
 
+
 session_start();
-define('CACHE', __DIR__.'/upload');
-define('CACHE2', __DIR__.'/upload/webp');
+define('CACHE', __DIR__.'/public/upload');
+define('CACHE2', __DIR__.'/public/upload/webp');
+
+define('DOMEN','/croppie/');

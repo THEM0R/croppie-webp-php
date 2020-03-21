@@ -138,7 +138,7 @@ $(function () {
 
       $.ajax({
         type: 'POST',
-        url: '/upload_url.php',
+        url: '/croppie/php/upload_url.php',
         data: {
           url: url
         },

@@ -1,0 +1,48 @@
+@font-face {
+    font-family: 'Ubuntu';
+    src: local('Ubuntu Light'), local('Ubuntu-Light'), url('300.woff2') format('woff2'), url('300.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Ubuntu';
+    src: local('Ubuntu Light Italic'), local('Ubuntu-LightItalic'), url('300i.woff2') format('woff2'), url('300i.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Ubuntu';
+    src: local('Ubuntu'), url('400.woff2') format('woff2'), url('400.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Ubuntu';
+    src: local('Ubuntu Italic'), local('Ubuntu-Italic'), url('400i.woff2') format('woff2'), url('400i.woff') format('woff');
+    font-weight: 400;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Ubuntu';
+    src: local('Ubuntu Medium'), local('Ubuntu-Medium'), url('500.woff2') format('woff2'), url('500.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Ubuntu';
+    src: local('Ubuntu Medium Italic'), local('Ubuntu-MediumItalic'), url('500i.woff2') format('woff2'), url('500i.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Ubuntu';
+    src: local('Ubuntu Bold'), local('Ubuntu-Bold'), url('700.woff2') format('woff2'), url('700.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Ubuntu';
+    src: local('Ubuntu Bold Italic'), local('Ubuntu-BoldItalic'), url('700i.woff2') format('woff2'), url('700i.woff') format('woff');
+    font-weight: 700;
+    font-style: italic;
+}

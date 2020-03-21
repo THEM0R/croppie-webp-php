@@ -1,6 +1,9 @@
 /.idea/
 /vendor/
 /node_modules/
+/gulp/
 /gulp/node_modules/
 /gulp/package-lock.json
+/node_modules/
+/package-lock.json
 /composer.lock

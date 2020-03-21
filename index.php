@@ -19,7 +19,7 @@ require 'init.php';
     crossorigin="anonymous"></script>
 
   <link rel="stylesheet" href="public/css/style.css">
-  <script src="public/js/app.min.js"></script>
+  <script src="public/js/app.js"></script>
 
 </head>
 <body style="min-height: 1000px">
