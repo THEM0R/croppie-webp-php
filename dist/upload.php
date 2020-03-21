@@ -8,7 +8,7 @@ define('CACHE','upload/');
 if(isset($_POST)){
   if(isset($_POST['upload'])){
 
-    $poster = $_POST['upload'];
+    $poster = $_POST['poster'];
 
     if(!empty($poster)){
       //code
